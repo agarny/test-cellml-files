@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 <model name="my_model" xmlns="http://www.cellml.org/cellml/1.0#" xmlns:cellml="http://www.cellml.org/cellml/1.0#">
     <!-- Multiple ODEs with the same name, but in different components-->
-    <units name="per_second">
+    <units name="per_s">
         <unit exponent="-1" units="second"/>
     </units>
     <component name="environment">
@@ -20,14 +20,14 @@
                     </bvar>
                     <ci>x</ci>
                 </apply>
-                <cn cellml:units="per_second">1</cn>
+                <cn cellml:units="per_s">1</cn>
             </apply>
         </math>
     </component>
     <component name="my_second_ode">
         <variable name="t" public_interface="in" units="second"/>
         <variable initial_value="1" name="x" units="dimensionless"/>
-        <variable initial_value="1" name="a" units="per_second"/>
+        <variable initial_value="1" name="a" units="per_s"/>
         <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
                 <eq/>

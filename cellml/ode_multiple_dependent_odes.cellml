@@ -6,7 +6,7 @@
    x(0) = -2
    y(0) = 0
    epsilon = 1-->
-    <units name="per_second">
+    <units name="per_s">
         <unit exponent="-1" units="second"/>
     </units>
     <component name="environment">
@@ -29,7 +29,7 @@
                 <apply>
                     <times/>
                     <ci>y</ci>
-                    <cn cellml:units="per_second">1</cn>
+                    <cn cellml:units="per_s">1</cn>
                 </apply>
             </apply>
         </math>
@@ -69,7 +69,7 @@
                         </apply>
                         <ci>x</ci>
                     </apply>
-                    <cn cellml:units="per_second">1</cn>
+                    <cn cellml:units="per_s">1</cn>
                 </apply>
             </apply>
         </math>

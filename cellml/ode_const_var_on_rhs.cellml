@@ -3,7 +3,7 @@
     <!-- ODE with a constant variable on its RHS
    d(x)/d(t) = a
    x(0) = 1-->
-    <units name="per_second">
+    <units name="per_s">
         <unit exponent="-1" units="second"/>
     </units>
     <component name="environment">
@@ -12,7 +12,7 @@
     <component name="my_ode">
         <variable name="t" public_interface="in" units="second"/>
         <variable initial_value="1" name="x" units="dimensionless"/>
-        <variable initial_value="1" name="a" units="per_second"/>
+        <variable initial_value="1" name="a" units="per_s"/>
         <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
                 <eq/>

@@ -3,7 +3,7 @@
     <!-- ODE with a constant on its RHS
    d(x)/d(t) = 1
    x(0) = 1-->
-    <units name="per_second">
+    <units name="per_s">
         <unit exponent="-1" units="second"/>
     </units>
     <component name="environment">
@@ -22,7 +22,7 @@
                     </bvar>
                     <ci>x</ci>
                 </apply>
-                <cn cellml:units="per_second">1</cn>
+                <cn cellml:units="per_s">1</cn>
             </apply>
         </math>
     </component>
