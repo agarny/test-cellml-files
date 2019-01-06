@@ -2,7 +2,8 @@
 <model name="my_model" xmlns="http://www.cellml.org/cellml/1.0#" xmlns:cellml="http://www.cellml.org/cellml/1.0#">
     <!-- Pseudo DAE v2
    d(x)/d(t) = cos(y)
-   y = sin(x)-->
+   y = sin(x)
+   Note: both v1 and v2 ought to generate the exact same code...-->
     <units name="per_s">
         <unit exponent="-1" units="second"/>
     </units>
