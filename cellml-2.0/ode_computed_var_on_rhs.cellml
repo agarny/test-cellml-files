@@ -1,0 +1,38 @@
+<model xmlns="http://www.cellml.org/cellml/2.0#" name="my_model">
+    <!-- ODE with a computed variable on its RHS
+   d(x)/d(t) = a
+   x(0) = 1
+   a = 1 -->
+    <units name="per_s">
+        <unit exponent="-1" units="second"/>
+    </units>
+    <component name="environment">
+        <variable name="t" units="second" interface="public"/>
+    </component>
+    <component name="my_ode">
+        <variable name="t" units="second" interface="public"/>
+        <variable initial_value="1" name="x" units="dimensionless" interface="public"/>
+        <variable name="a" units="per_s"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <apply>
+                    <diff/>
+                    <bvar>
+                        <ci>t</ci>
+                    </bvar>
+                    <ci>x</ci>
+                </apply>
+                <ci>a</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>a</ci>
+                <cn units="per_s">1</cn>
+            </apply>
+        </math>
+    </component>
+    <connection component_1="my_ode" component_2="environment">
+        <map_variables variable_1="t" variable_2="t"/>
+    </connection>
+</model>

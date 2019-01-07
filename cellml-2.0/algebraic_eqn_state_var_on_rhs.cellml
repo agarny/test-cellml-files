@@ -1,0 +1,55 @@
+<model xmlns="http://www.cellml.org/cellml/2.0#" name="my_model">
+    <!-- Algebraic equation with a function of a state variable function on its
+ RHS
+   xx = 2*x-->
+    <units name="per_s">
+        <unit exponent="-1" units="second"/>
+    </units>
+    <component name="environment">
+        <variable name="t" units="second" interface="public"/>
+    </component>
+    <component name="my_ode">
+        <variable name="t" units="second" interface="public"/>
+        <variable initial_value="1" name="x" units="dimensionless" interface="public"/>
+        <variable name="a" units="per_s"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <apply>
+                    <diff/>
+                    <bvar>
+                        <ci>t</ci>
+                    </bvar>
+                    <ci>x</ci>
+                </apply>
+                <ci>a</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>a</ci>
+                <cn units="per_s">1</cn>
+            </apply>
+        </math>
+    </component>
+    <component name="my_algebraic_eqn">
+        <variable name="x" units="dimensionless" interface="public"/>
+        <variable name="xx" units="dimensionless"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>xx</ci>
+                <apply>
+                    <times/>
+                    <cn units="dimensionless">2</cn>
+                    <ci>x</ci>
+                </apply>
+            </apply>
+        </math>
+    </component>
+    <connection component_1="my_ode" component_2="environment">
+        <map_variables variable_1="t" variable_2="t"/>
+    </connection>
+    <connection component_1="my_ode" component_2="my_algebraic_eqn">
+        <map_variables variable_1="x" variable_2="x"/>
+    </connection>
+</model>

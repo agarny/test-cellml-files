@@ -1,0 +1,21 @@
+<model xmlns="http://www.cellml.org/cellml/2.0#" name="my_model">
+    <!-- Algebraic equation with a computed variable on its RHS
+   x = a
+   a = 1 -->
+    <component name="my_algebraic_eqn">
+        <variable name="x" units="dimensionless"/>
+        <variable name="a" units="dimensionless"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>x</ci>
+                <ci>a</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>a</ci>
+                <cn units="dimensionless">1</cn>
+            </apply>
+        </math>
+    </component>
+</model>

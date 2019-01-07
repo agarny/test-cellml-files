@@ -1,0 +1,14 @@
+<model xmlns="http://www.cellml.org/cellml/2.0#" name="my_model">
+    <!-- Algebraic equation with a constant on its RHS
+   x = 1-->
+    <component name="my_algebraic_eqn">
+        <variable name="x" units="dimensionless"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>x</ci>
+                <cn units="dimensionless">1</cn>
+            </apply>
+        </math>
+    </component>
+</model>

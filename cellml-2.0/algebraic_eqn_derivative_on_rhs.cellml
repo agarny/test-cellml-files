@@ -1,0 +1,60 @@
+<model xmlns="http://www.cellml.org/cellml/2.0#" name="my_model">
+    <!-- Algebraic equation with a derivative on its RHS
+   x = d(v)/d(t)-->
+    <units name="per_s">
+        <unit exponent="-1" units="second"/>
+    </units>
+    <component name="environment">
+        <variable name="t" units="second" interface="public"/>
+    </component>
+    <component name="my_ode">
+        <variable name="t" units="second" interface="public"/>
+        <variable initial_value="1" name="v" units="dimensionless" interface="public"/>
+        <variable name="a" units="per_s"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <apply>
+                    <diff/>
+                    <bvar>
+                        <ci>t</ci>
+                    </bvar>
+                    <ci>v</ci>
+                </apply>
+                <ci>a</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>a</ci>
+                <cn units="per_s">1</cn>
+            </apply>
+        </math>
+    </component>
+    <component name="my_algebraic_eqn">
+        <variable name="t" units="second" interface="public"/>
+        <variable name="v" units="dimensionless" interface="public"/>
+        <variable name="x" units="per_s"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>x</ci>
+                <apply>
+                    <diff/>
+                    <bvar>
+                        <ci>t</ci>
+                    </bvar>
+                    <ci>v</ci>
+                </apply>
+            </apply>
+        </math>
+    </component>
+    <connection component_1="my_ode" component_2="environment">
+        <map_variables variable_1="t" variable_2="t"/>
+    </connection>
+    <connection component_1="my_algebraic_eqn" component_2="environment">
+        <map_variables variable_1="t" variable_2="t"/>
+    </connection>
+    <connection component_1="my_ode" component_2="my_algebraic_eqn">
+        <map_variables variable_1="v" variable_2="v"/>
+    </connection>
+</model>
