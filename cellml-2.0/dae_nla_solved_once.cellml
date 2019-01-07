@@ -1,6 +1,7 @@
 <model xmlns="http://www.cellml.org/cellml/2.0#" name="my_model">
     <!-- DAE with NLA system to be solved only once
    d(x)/d(t) = 1
+   x(0) = 0
    a^2 = 9-->
     <units name="per_s">
         <unit exponent="-1" units="second"/>
