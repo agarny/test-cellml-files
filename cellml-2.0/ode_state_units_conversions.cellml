@@ -1,10 +1,10 @@
 <model xmlns="http://www.cellml.org/cellml/2.0#" name="my_model">
     <!-- Conversion of state units
-   t originally in milliseconds
+   t in seconds
    d(x)/d(t) = 0.001 with x in volts
    x(0) = 1
    x_rate = d(x)/d(t)
-   d(y)/d(t) = 1000 with x in microvolts
+   d(y)/d(t) = 1000 with y in microvolts
    y(0) = 1
    y_rate = d(y)/d(t)-->
     <units name="V_per_s">
