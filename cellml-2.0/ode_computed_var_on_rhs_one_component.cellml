@@ -1,4 +1,5 @@
-<model xmlns="http://www.cellml.org/cellml/2.0#" name="my_model">
+<?xml version='1.0' encoding='UTF-8'?>
+<model name="my_model" xmlns="http://www.cellml.org/cellml/2.0#" xmlns:cellml="http://www.cellml.org/cellml/2.0#">
     <!-- ODE with a computed variable on its RHS
    d(x)/d(t) = a
    x(0) = 1
@@ -25,7 +26,7 @@
             <apply>
                 <eq/>
                 <ci>a</ci>
-                <cn units="per_s">1</cn>
+                <cn cellml:units="per_s">1</cn>
             </apply>
         </math>
     </component>

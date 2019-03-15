@@ -1,4 +1,5 @@
-<model xmlns="http://www.cellml.org/cellml/2.0#" name="my_model">
+<?xml version='1.0' encoding='UTF-8'?>
+<model name="my_model" xmlns="http://www.cellml.org/cellml/2.0#" xmlns:cellml="http://www.cellml.org/cellml/2.0#">
     <!-- Conversion of state units
    t in seconds
    d(x)/d(t) = 0.001 with x in volts
@@ -19,11 +20,11 @@
         <unit exponent="-1" units="second"/>
     </units>
     <component name="environment">
-        <variable name="t" units="second" interface="public"/>
+        <variable interface="public" name="t" units="second"/>
     </component>
     <component name="my_x_ode">
-        <variable name="t" units="second" interface="public_and_private"/>
-        <variable initial_value="1" name="x" units="volt" interface="private"/>
+        <variable interface="public_and_private" name="t" units="second"/>
+        <variable initial_value="1" interface="private" name="x" units="volt"/>
         <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
                 <eq/>
@@ -34,13 +35,13 @@
                     </bvar>
                     <ci>x</ci>
                 </apply>
-                <cn units="V_per_s">0.001</cn>
+                <cn cellml:units="V_per_s">0.001</cn>
             </apply>
         </math>
     </component>
     <component name="my_x_rate_eqn">
-        <variable name="t" units="second" interface="public"/>
-        <variable name="x" units="volt" interface="public"/>
+        <variable interface="public" name="t" units="second"/>
+        <variable interface="public" name="x" units="volt"/>
         <variable name="x_rate" units="V_per_s"/>
         <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
@@ -57,8 +58,8 @@
         </math>
     </component>
     <component name="my_y_ode">
-        <variable name="t" units="second" interface="public_and_private"/>
-        <variable initial_value="1" name="y" units="uV" interface="private"/>
+        <variable interface="public_and_private" name="t" units="second"/>
+        <variable initial_value="1" interface="private" name="y" units="uV"/>
         <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
                 <eq/>
@@ -69,13 +70,13 @@
                     </bvar>
                     <ci>y</ci>
                 </apply>
-                <cn units="uV_per_s">1000</cn>
+                <cn cellml:units="uV_per_s">1000</cn>
             </apply>
         </math>
     </component>
     <component name="my_y_rate_eqn">
-        <variable name="t" units="second" interface="public"/>
-        <variable name="y" units="uV" interface="public"/>
+        <variable interface="public" name="t" units="second"/>
+        <variable interface="public" name="y" units="uV"/>
         <variable name="y_rate" units="uV_per_s"/>
         <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>

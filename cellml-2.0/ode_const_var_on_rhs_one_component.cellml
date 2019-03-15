@@ -1,4 +1,5 @@
-<model xmlns="http://www.cellml.org/cellml/2.0#" name="my_model">
+<?xml version='1.0' encoding='UTF-8'?>
+<model name="my_model" xmlns="http://www.cellml.org/cellml/2.0#">
     <!-- ODE with a constant variable on its RHS
    d(x)/d(t) = a
    x(0) = 1-->

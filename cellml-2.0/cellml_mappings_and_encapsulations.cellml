@@ -1,4 +1,5 @@
-<model xmlns="http://www.cellml.org/cellml/2.0#" name="my_model">
+<?xml version='1.0' encoding='UTF-8'?>
+<model name="my_model" xmlns="http://www.cellml.org/cellml/2.0#" xmlns:cellml="http://www.cellml.org/cellml/2.0#">
     <!-- - Coupled pair of ODEs, encapsulated within a parent:
      dx/dt = -y
      dy/dt =  x
@@ -25,17 +26,17 @@
         <unit prefix="milli" units="mole"/>
     </units>
     <component name="environment">
-        <variable name="t" units="ms" interface="public"/>
+        <variable interface="public" name="t" units="ms"/>
     </component>
     <component name="circle_parent">
-        <variable name="t" units="ms" interface="public_and_private"/>
-        <variable name="x" units="mM" interface="private"/>
-        <variable name="y" units="mM" interface="public_and_private"/>
+        <variable interface="public_and_private" name="t" units="ms"/>
+        <variable interface="private" name="x" units="mM"/>
+        <variable interface="public_and_private" name="y" units="mM"/>
     </component>
     <component name="circle_x">
-        <variable name="t" units="ms" interface="public"/>
-        <variable name="x" units="mM" interface="public_and_private"/>
-        <variable name="y" units="mM" interface="public"/>
+        <variable interface="public" name="t" units="ms"/>
+        <variable interface="public_and_private" name="x" units="mM"/>
+        <variable interface="public" name="y" units="mM"/>
         <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
                 <eq/>
@@ -52,16 +53,16 @@
                         <minus/>
                         <ci>y</ci>
                     </apply>
-                    <cn units="per_ms">1</cn>
+                    <cn cellml:units="per_ms">1</cn>
                 </apply>
             </apply>
         </math>
     </component>
     <component name="circle_x_source">
-        <variable initial_value="0" name="x" units="mM" interface="public"/>
+        <variable initial_value="0" interface="public" name="x" units="mM"/>
     </component>
     <component name="circle_x_sibling">
-        <variable name="x" units="mM" interface="public"/>
+        <variable interface="public" name="x" units="mM"/>
         <variable name="two_x" units="milli_mole"/>
         <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
@@ -69,21 +70,21 @@
                 <ci>two_x</ci>
                 <apply>
                     <times/>
-                    <cn units="litre">2</cn>
+                    <cn cellml:units="litre">2</cn>
                     <ci>x</ci>
                 </apply>
             </apply>
         </math>
     </component>
     <component name="circle_y">
-        <variable name="t" units="ms" interface="public_and_private"/>
-        <variable name="y" units="mM" interface="public_and_private"/>
-        <variable name="x" units="mM" interface="public_and_private"/>
+        <variable interface="public_and_private" name="t" units="ms"/>
+        <variable interface="public_and_private" name="y" units="mM"/>
+        <variable interface="public_and_private" name="x" units="mM"/>
     </component>
     <component name="circle_y_implementation">
-        <variable name="t" units="ms" interface="public"/>
-        <variable initial_value="1" name="y" units="mM" interface="public"/>
-        <variable name="x" units="mM" interface="public"/>
+        <variable interface="public" name="t" units="ms"/>
+        <variable initial_value="1" interface="public" name="y" units="mM"/>
+        <variable interface="public" name="x" units="mM"/>
         <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
                 <eq/>
@@ -97,13 +98,13 @@
                 <apply>
                     <times/>
                     <ci>x</ci>
-                    <cn units="per_ms">1</cn>
+                    <cn cellml:units="per_ms">1</cn>
                 </apply>
             </apply>
         </math>
     </component>
     <component name="circle_sibling">
-        <variable name="y" units="mM" interface="public"/>
+        <variable interface="public" name="y" units="mM"/>
         <variable name="local_complex_maths" units="mM"/>
         <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
@@ -116,20 +117,20 @@
                         <divide/>
                         <apply>
                             <times/>
-                            <cn units="dimensionless">5</cn>
+                            <cn cellml:units="dimensionless">5</cn>
                             <ci>y</ci>
                         </apply>
-                        <cn units="dimensionless">3</cn>
+                        <cn cellml:units="dimensionless">3</cn>
                     </apply>
                     <apply>
                         <times/>
-                        <cn units="mM">1</cn>
+                        <cn cellml:units="mM">1</cn>
                         <apply>
                             <exp/>
                             <apply>
                                 <divide/>
                                 <ci>y</ci>
-                                <cn units="mM">2</cn>
+                                <cn cellml:units="mM">2</cn>
                             </apply>
                         </apply>
                     </apply>

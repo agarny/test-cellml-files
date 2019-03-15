@@ -1,4 +1,5 @@
-<model xmlns="http://www.cellml.org/cellml/2.0#" name="my_model">
+<?xml version='1.0' encoding='UTF-8'?>
+<model name="my_model" xmlns="http://www.cellml.org/cellml/2.0#" xmlns:cellml="http://www.cellml.org/cellml/2.0#">
     <!-- Multiple dependent ODEs (this is actually the van der Pol 1928 model)
    d(x)/d(t) = y
    d(y)/d(t) = (epsilon*(1-x^2)*y-x)
@@ -9,12 +10,12 @@
         <unit exponent="-1" units="second"/>
     </units>
     <component name="environment">
-        <variable name="t" units="second" interface="public"/>
+        <variable interface="public" name="t" units="second"/>
     </component>
     <component name="my_x_ode">
-        <variable name="t" units="second" interface="public"/>
-        <variable initial_value="-2" name="x" units="dimensionless" interface="public"/>
-        <variable name="y" units="dimensionless" interface="public"/>
+        <variable interface="public" name="t" units="second"/>
+        <variable initial_value="-2" interface="public" name="x" units="dimensionless"/>
+        <variable interface="public" name="y" units="dimensionless"/>
         <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
                 <eq/>
@@ -28,15 +29,15 @@
                 <apply>
                     <times/>
                     <ci>y</ci>
-                    <cn units="per_s">1</cn>
+                    <cn cellml:units="per_s">1</cn>
                 </apply>
             </apply>
         </math>
     </component>
     <component name="my_y_ode">
-        <variable name="t" units="second" interface="public"/>
-        <variable name="x" units="dimensionless" interface="public"/>
-        <variable initial_value="0" name="y" units="dimensionless" interface="public"/>
+        <variable interface="public" name="t" units="second"/>
+        <variable interface="public" name="x" units="dimensionless"/>
+        <variable initial_value="0" interface="public" name="y" units="dimensionless"/>
         <variable initial_value="1" name="epsilon" units="dimensionless"/>
         <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
@@ -57,18 +58,18 @@
                             <ci>epsilon</ci>
                             <apply>
                                 <minus/>
-                                <cn units="dimensionless">1</cn>
+                                <cn cellml:units="dimensionless">1</cn>
                                 <apply>
                                     <power/>
                                     <ci>x</ci>
-                                    <cn units="dimensionless">2</cn>
+                                    <cn cellml:units="dimensionless">2</cn>
                                 </apply>
                             </apply>
                             <ci>y</ci>
                         </apply>
                         <ci>x</ci>
                     </apply>
-                    <cn units="per_s">1</cn>
+                    <cn cellml:units="per_s">1</cn>
                 </apply>
             </apply>
         </math>

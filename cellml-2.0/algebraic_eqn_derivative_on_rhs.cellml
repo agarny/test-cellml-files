@@ -1,15 +1,16 @@
-<model xmlns="http://www.cellml.org/cellml/2.0#" name="my_model">
+<?xml version='1.0' encoding='UTF-8'?>
+<model name="my_model" xmlns="http://www.cellml.org/cellml/2.0#" xmlns:cellml="http://www.cellml.org/cellml/2.0#">
     <!-- Algebraic equation with a derivative on its RHS
    x = d(v)/d(t)-->
     <units name="per_s">
         <unit exponent="-1" units="second"/>
     </units>
     <component name="environment">
-        <variable name="t" units="second" interface="public"/>
+        <variable interface="public" name="t" units="second"/>
     </component>
     <component name="my_ode">
-        <variable name="t" units="second" interface="public"/>
-        <variable initial_value="1" name="v" units="dimensionless" interface="public"/>
+        <variable interface="public" name="t" units="second"/>
+        <variable initial_value="1" interface="public" name="v" units="dimensionless"/>
         <variable name="a" units="per_s"/>
         <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
@@ -26,13 +27,13 @@
             <apply>
                 <eq/>
                 <ci>a</ci>
-                <cn units="per_s">1</cn>
+                <cn cellml:units="per_s">1</cn>
             </apply>
         </math>
     </component>
     <component name="my_algebraic_eqn">
-        <variable name="t" units="second" interface="public"/>
-        <variable name="v" units="dimensionless" interface="public"/>
+        <variable interface="public" name="t" units="second"/>
+        <variable interface="public" name="v" units="dimensionless"/>
         <variable name="x" units="per_s"/>
         <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>

@@ -1,4 +1,5 @@
-<model xmlns="http://www.cellml.org/cellml/2.0#" name="my_model">
+<?xml version='1.0' encoding='UTF-8'?>
+<model name="my_model" xmlns="http://www.cellml.org/cellml/2.0#" xmlns:cellml="http://www.cellml.org/cellml/2.0#">
     <!-- DAE with NLA system to be solved at all times
    d(x)/d(t) = cos(y)
    x(0) = 1
@@ -7,10 +8,10 @@
         <unit exponent="-1" units="second"/>
     </units>
     <component name="environment">
-        <variable name="t" units="second" interface="public"/>
+        <variable interface="public" name="t" units="second"/>
     </component>
     <component name="my_dae">
-        <variable name="t" units="second" interface="public"/>
+        <variable interface="public" name="t" units="second"/>
         <variable initial_value="1" name="x" units="dimensionless"/>
         <variable name="y" units="dimensionless"/>
         <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -29,7 +30,7 @@
                         <cos/>
                         <ci>y</ci>
                     </apply>
-                    <cn units="per_s">1</cn>
+                    <cn cellml:units="per_s">1</cn>
                 </apply>
             </apply>
             <apply>

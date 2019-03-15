@@ -1,4 +1,5 @@
-<model xmlns="http://www.cellml.org/cellml/2.0#" name="my_model">
+<?xml version='1.0' encoding='UTF-8'?>
+<model name="my_model" xmlns="http://www.cellml.org/cellml/2.0#" xmlns:cellml="http://www.cellml.org/cellml/2.0#">
     <!-- DAE with NLA system to be solved only once
    d(x)/d(t) = 1
    x(0) = 0
@@ -20,7 +21,7 @@
                     </bvar>
                     <ci>x</ci>
                 </apply>
-                <cn units="per_s">1</cn>
+                <cn cellml:units="per_s">1</cn>
             </apply>
         </math>
         <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -29,9 +30,9 @@
                 <apply>
                     <power/>
                     <ci>a</ci>
-                    <cn units="dimensionless">2</cn>
+                    <cn cellml:units="dimensionless">2</cn>
                 </apply>
-                <cn units="dimensionless">9</cn>
+                <cn cellml:units="dimensionless">9</cn>
             </apply>
         </math>
     </component>

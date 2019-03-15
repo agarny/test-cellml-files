@@ -1,4 +1,5 @@
-<model xmlns="http://www.cellml.org/cellml/2.0#" name="my_model">
+<?xml version='1.0' encoding='UTF-8'?>
+<model name="my_model" xmlns="http://www.cellml.org/cellml/2.0#" xmlns:cellml="http://www.cellml.org/cellml/2.0#">
     <!-- Multiple dependent ODEs (this is actually the van der Pol 1928 model)
    d(x)/d(t) = y
    d(y)/d(t) = (epsilon*(1-x^2)*y-x)
@@ -26,7 +27,7 @@
                 <apply>
                     <times/>
                     <ci>y</ci>
-                    <cn units="per_s">1</cn>
+                    <cn cellml:units="per_s">1</cn>
                 </apply>
             </apply>
             <apply>
@@ -47,18 +48,18 @@
                             <ci>epsilon</ci>
                             <apply>
                                 <minus/>
-                                <cn units="dimensionless">1</cn>
+                                <cn cellml:units="dimensionless">1</cn>
                                 <apply>
                                     <power/>
                                     <ci>x</ci>
-                                    <cn units="dimensionless">2</cn>
+                                    <cn cellml:units="dimensionless">2</cn>
                                 </apply>
                             </apply>
                             <ci>y</ci>
                         </apply>
                         <ci>x</ci>
                     </apply>
-                    <cn units="per_s">1</cn>
+                    <cn cellml:units="per_s">1</cn>
                 </apply>
             </apply>
         </math>

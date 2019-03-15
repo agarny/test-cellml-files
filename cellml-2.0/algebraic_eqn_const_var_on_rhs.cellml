@@ -1,4 +1,5 @@
-<model xmlns="http://www.cellml.org/cellml/2.0#" name="my_model">
+<?xml version='1.0' encoding='UTF-8'?>
+<model name="my_model" xmlns="http://www.cellml.org/cellml/2.0#">
     <!-- Algebraic equation with a constant variable on its RHS
    x = a-->
     <component name="my_algebraic_eqn">

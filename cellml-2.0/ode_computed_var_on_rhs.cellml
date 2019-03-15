@@ -1,4 +1,5 @@
-<model xmlns="http://www.cellml.org/cellml/2.0#" name="my_model">
+<?xml version='1.0' encoding='UTF-8'?>
+<model name="my_model" xmlns="http://www.cellml.org/cellml/2.0#" xmlns:cellml="http://www.cellml.org/cellml/2.0#">
     <!-- ODE with a computed variable on its RHS
    d(x)/d(t) = a
    x(0) = 1
@@ -7,11 +8,11 @@
         <unit exponent="-1" units="second"/>
     </units>
     <component name="environment">
-        <variable name="t" units="second" interface="public"/>
+        <variable interface="public" name="t" units="second"/>
     </component>
     <component name="my_ode">
-        <variable name="t" units="second" interface="public"/>
-        <variable initial_value="1" name="x" units="dimensionless" interface="public"/>
+        <variable interface="public" name="t" units="second"/>
+        <variable initial_value="1" interface="public" name="x" units="dimensionless"/>
         <variable name="a" units="per_s"/>
         <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
@@ -28,7 +29,7 @@
             <apply>
                 <eq/>
                 <ci>a</ci>
-                <cn units="per_s">1</cn>
+                <cn cellml:units="per_s">1</cn>
             </apply>
         </math>
     </component>
